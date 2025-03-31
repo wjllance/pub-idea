@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食谱推荐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .day-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .day-header {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .meal {
+            margin-bottom: 15px;
+        }
+
+        .meal-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+
+        .meal-content {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .change-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .change-btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>一周食谱推荐</h1>
+            <p>根据您的家庭情况，为您推荐以下食谱</p>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">周一</div>
+            <div class="meal">
+                <div class="meal-title">早餐</div>
+                <div class="meal-content">牛奶 + 全麦面包 + 水煮蛋</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+            <div class="meal">
+                <div class="meal-title">午餐</div>
+                <div class="meal-content">清炒时蔬 + 红烧肉 + 米饭</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+            <div class="meal">
+                <div class="meal-title">晚餐</div>
+                <div class="meal-content">蒜蓉炒青菜 + 清蒸鱼 + 米饭</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">周二</div>
+            <div class="meal">
+                <div class="meal-title">早餐</div>
+                <div class="meal-content">豆浆 + 油条 + 咸鸭蛋</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+            <div class="meal">
+                <div class="meal-title">午餐</div>
+                <div class="meal-content">炒青菜 + 糖醋排骨 + 米饭</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+            <div class="meal">
+                <div class="meal-title">晚餐</div>
+                <div class="meal-content">炒豆芽 + 红烧鸡翅 + 米饭</div>
+                <button class="change-btn" onclick="changeMeal(this)">更换</button>
+            </div>
+        </div>
+
+        <button class="btn" onclick="nextPage()">下一步：生成购物清单</button>
+    </div>
+
+    <script>
+        function changeMeal(btn) {
+            const mealContent = btn.previousElementSibling;
+            const mealTitle = mealContent.previousElementSibling;
+            alert('更换菜品功能开发中...');
+        }
+
+        function nextPage() {
+            window.location.href = 'shopping-list.html';
+        }
+    </script>
+</body>
+</html> 

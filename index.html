@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目导航</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-item {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #34495e;
+            margin: 15px 0 10px;
+            padding-left: 5px;
+            border-left: 3px solid #3498db;
+        }
+
+        .project-files {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .file-item {
+            margin-bottom: 8px;
+        }
+
+        .file-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .file-link:hover {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .preview-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .preview-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .preview-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .preview-content h1,
+        .preview-content h2,
+        .preview-content h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+        }
+
+        .preview-content p {
+            margin-bottom: 15px;
+        }
+
+        .preview-content ul,
+        .preview-content ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .preview-content li {
+            margin-bottom: 5px;
+        }
+
+        .preview-content code {
+            background: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .preview-content pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .file-icon {
+            font-size: 16px;
+        }
+
+        .active {
+            color: #2ecc71;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>项目导航</h1>
+        <p>浏览项目文档和功能页面</p>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul class="project-list">
+                <li class="project-item">
+                    <div class="project-title">科学食谱规划</div>
+                    
+                    <div class="section-title">功能页面</div>
+                    <ul class="project-files">
+                        <li class="file-item">
+                            <a href="recipe/index.html" class="file-link">
+                                <span class="file-icon">🏠</span>
+                                主页
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="recipe/family-info.html" class="file-link">
+                                <span class="file-icon">👨‍👩‍👧‍👦</span>
+                                家庭信息录入
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="recipe/recipe-recommendation.html" class="file-link">
+                                <span class="file-icon">🍽️</span>
+                                食谱推荐
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="recipe/shopping-list.html" class="file-link">
+                                <span class="file-icon">🛒</span>
+                                购物清单
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="section-title">项目文档</div>
+                    <ul class="project-files">
+                        <li class="file-item">
+                            <a href="#" class="file-link" onclick="previewMarkdown('recipe/prd-v2.md')">
+                                <span class="file-icon">📝</span>
+                                产品需求文档
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="#" class="file-link" onclick="previewMarkdown('recipe/一周食谱小程序.md')">
+                                <span class="file-icon">📋</span>
+                                小程序需求文档
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2 class="preview-title">欢迎使用项目导航</h2>
+                <p>请从左侧选择要查看的文档或页面</p>
+            </div>
+            <div class="preview-content" id="preview-content">
+                <!-- Markdown 预览内容将在这里显示 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 项目导航 - 让文档浏览更便捷</p>
+    </div>
+
+    <script>
+        async function previewMarkdown(filePath) {
+            try {
+                const response = await fetch(filePath);
+                const markdown = await response.text();
+                const previewContent = document.getElementById('preview-content');
+                previewContent.innerHTML = marked.parse(markdown);
+                
+                // 更新预览标题
+                const previewTitle = document.querySelector('.preview-title');
+                previewTitle.textContent = filePath.split('/').pop().replace('.md', '');
+                
+                // 更新活动状态
+                document.querySelectorAll('.file-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            } catch (error) {
+                console.error('Error loading markdown file:', error);
+                alert('加载文档失败，请稍后重试');
+            }
+        }
+
+        // 配置 marked 选项
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        // 根据当前页面设置活动状态
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.file-link').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
